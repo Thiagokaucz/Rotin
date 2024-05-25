@@ -36,6 +36,7 @@ if (array_key_exists($url, $routes)) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 olá
 =======
 
@@ -51,3 +52,7 @@ kkkkkkkkkk
 
 >>>>>>> 9582cd5 (Update index.html)
 >>>>>>> c6d1795 (Rename index.php to teste.php)
+=======
+
+>>>>>>> 716d8ce30ac2e219fe006edefea8cf55d194dddf
+>>>>>>> dfc231cb025ae1b0021898e7fc8daffa02420744

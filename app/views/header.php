@@ -14,10 +14,11 @@ session_start();
         <nav class="site-nav">
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/entreEmContato">Entre em contato</a></li>
+                <li><a href="/servicos">Servicos</a></li>
                 <li><a href="/sobre">Sobre</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="/teste">teste</a></li>
-                    <li><a href="/teste">teste</a></li>
+                    <li><a href="/areaCliente">Area do cliente</a></li>
                     <li><a href="/logout">Logout (<?php echo htmlspecialchars($_SESSION['nome']); ?>)</a></li>
                 <?php else: ?>
                     <li><a href="/login">Login</a></li>

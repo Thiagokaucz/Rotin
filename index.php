@@ -1,25 +1,32 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-olha consegui
-=======
-<<<<<<< HEAD
-=======
->>>>>>> dfc231cb025ae1b0021898e7fc8daffa02420744
-<<<<<<< HEAD
-<<<<<<< HEAD
-olá
-=======
+<?php
+// Carrega o arquivo de rotas
+require_once('routes.php');
 
->>>>>>> 02142b9 (Update index.html)
-=======
-olha consegui
->>>>>>> 716d8ce (Adicionar novo arquivo index.html)
-=======
-olha consegui
->>>>>>> 716d8ce30ac2e219fe006edefea8cf55d194dddf
+// Obtém a URL atual
+$url = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 
-teste teste 
-<<<<<<< HEAD
->>>>>>> dfc231c (Modificar arquivo index.php para atualização de conteúdo)
-=======
->>>>>>> dfc231cb025ae1b0021898e7fc8daffa02420744
+// Verifica se a rota existe
+if (array_key_exists($url, $routes)) {
+    // Separa o nome do controlador e o metodo
+    $route = explode('@', $routes[$url]);
+    $controllerName = $route[0];
+    $methodName = $route[1];
+
+    // Carrega o controlador
+    require_once('app/controllers/' . $controllerName . '.php');
+
+    // Instancia o controlador e chama o metodo
+    $controller = new $controllerName();
+    if ($url === '/forgot-password' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        $controller->handleForm();
+    } else {
+        $controller->$methodName();
+    }
+} else {
+    // Pagina nao encontrada
+    http_response_code(404);
+    require_once('app/views/header.php');
+    require_once('app/views/error.php');
+    require_once('app/views/footer.php');
+}
+?>

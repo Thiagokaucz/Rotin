@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 // Carrega o arquivo de rotas
 require_once('routes.php');
@@ -30,3 +31,6 @@ if (array_key_exists($url, $routes)) {
     require_once('app/views/footer.php');
 }
 ?>
+=======
+
+>>>>>>> 716d8ce30ac2e219fe006edefea8cf55d194dddf
